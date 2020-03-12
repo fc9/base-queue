@@ -1,0 +1,57 @@
+{
+    "name": "fc9/queue",
+    "description": "Plugin that allows shooting queues and jobs.",
+    "keywords": [
+        "fc9",
+        "queue",
+        "jobs",
+        "filas"
+    ],
+    "homepage": "https://github.com/fc9/queue",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fabio Cabral",
+            "email": "fabiocabralsantos@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.0",
+        "menarasolutions/geographer-laravel": "^0.2.1",
+        "waavi/sanitizer": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fc9\\Queue\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fc9\\Queue\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fc9\\Queue\\Providers\\QueueServiceProvider"
+            ],
+            "aliases": {
+                "Queue": "Fc9\\Queue\\Facades\\Queue"
+            }
+        }
+    }
+}
